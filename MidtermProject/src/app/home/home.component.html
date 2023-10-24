@@ -18,3 +18,12 @@
 <div *ngIf="!mostLikedPost">
     <h4>Unforutnately, there is no posts today.</h4>
 </div>
+
+<div>
+    <p>Maybe you know them?</p>
+    <ol>
+        <li *ngFor="let user of users">
+            User: {{ user.name }}
+        </li>
+    </ol>
+</div>
