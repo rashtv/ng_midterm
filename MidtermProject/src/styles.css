@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0px;
+    padding: 0px;
+
+    font-family: fantasy;
+}
+
+h1, h2, h3, h4, h5, h6, div {
+    margin: 0px 30px;
+}
+
+button {
+    margin: 10px 0px;
+    width: 200px;
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 10px 0px;
+}

@@ -6,16 +6,16 @@
 <div>
     <ul>
         <li *ngFor="let post of posts">
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.body }}</p>
-            <p>Likes: {{ post.likes}}</p>
+            <p style="font-weight: bold; font-size: 24px;">Post title: {{ post.title }}</p>
+            <p>Post body: {{ post.body }}</p>
+            <p>Post likes: {{ post.likes}}</p>
             <button appHighlighter (click)="likePost(post.id)">Like</button>
             <p>Comments:</p>
             <ul>
                 <li *ngFor="let comment of post.comments">
-                    <p>{{ comment.name }}</p>
-                    <p>{{ comment.text }}</p>
-                    <p>{{ comment.likes }}</p>
+                    <p>Commentator: {{ comment.name }}</p>
+                    <p>Comment text: {{ comment.text }}</p>
+                    <p>Comment likes: {{ comment.likes }}</p>
                 </li>
             </ul>
         </li>

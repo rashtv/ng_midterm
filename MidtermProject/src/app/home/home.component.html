@@ -4,15 +4,15 @@
 <h1>Home</h1>
 <h3>For this day the most popular post:</h3>
 <div *ngIf="mostLikedPost">
-    <h4>Post: {{ mostLikedPost.title}}</h4>
+    <p style="font-weight: bold;">Post: {{ mostLikedPost.title}}</p>
     <ul>
         <li *ngFor="let comment of mostLikedPost.comments">
             <p>Commentator: {{ comment.name }}</p>
-            <p>Comment Text: {{ comment.text }}</p>
-            <p>Comment Likes: {{ comment.likes }}</p>
+            <p>Comment text: {{ comment.text }}</p>
+            <p>Comment likes: {{ comment.likes }}</p>
         </li>
     </ul>
-    <p>Post Likes: {{ mostLikedPost.likes }}</p>
+    <p>Post likes: {{ mostLikedPost.likes }}</p>
     <button appHighlighter (click)="likePost(mostLikedPost.id)">Like!</button>
 </div>
 <div *ngIf="!mostLikedPost">
