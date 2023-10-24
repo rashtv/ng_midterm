@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PostService } from '../post.service';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  mostLikedPost: Post | null = null;
 
+  constructor(private postService: PostService) {}
+
+  ngOnInit(): void {
+    this.mostLikedPost = this.postService.getMostLikedPost();
+  }
+
+  likePost(postId: number) {
+    this.postService.incrementLikeNumber(postId);
+  }
 }

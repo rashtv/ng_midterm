@@ -1,1 +1,20 @@
-<p>home works!</p>
+<a [routerLink]="['/about']"><button>Go to About</button></a>
+<a [routerLink]="['/feed']"><button>Go to Feed</button></a>
+
+<h1>Home</h1>
+<h3>For this day the most popular post:</h3>
+<div *ngIf="mostLikedPost">
+    <h4>Post: {{ mostLikedPost.title}}</h4>
+    <ul>
+        <li *ngFor="let comment of mostLikedPost.comments">
+            <p>Commentator: {{ comment.name }}</p>
+            <p>Comment Text: {{ comment.text }}</p>
+            <p>Comment Likes: {{ comment.likes }}</p>
+        </li>
+    </ul>
+    <p>Post Likes: {{ mostLikedPost.likes }}</p>
+    <button (click)="likePost(mostLikedPost.id)">Like!</button>
+</div>
+<div *ngIf="!mostLikedPost">
+    <h4>Unforutnately, there is no posts today.</h4>
+</div>

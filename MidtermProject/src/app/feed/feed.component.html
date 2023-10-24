@@ -1,1 +1,23 @@
-<p>feed works!</p>
+<a [routerLink]="['']"><button>Go to Home</button></a>
+<a [routerLink]="['/about']"><button>Go to About</button></a>
+
+<h1>Feed</h1>
+
+<div>
+    <ul>
+        <li *ngFor="let post of posts">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.body }}</p>
+            <p>Likes: {{ post.likes}}</p>
+            <button (click)="likePost(post.id)">Like</button>
+            <p>Comments:</p>
+            <ul>
+                <li *ngFor="let comment of post.comments">
+                    <p>{{ comment.name }}</p>
+                    <p>{{ comment.text }}</p>
+                    <p>{{ comment.likes }}</p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
