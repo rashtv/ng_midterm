@@ -13,7 +13,7 @@
         </li>
     </ul>
     <p>Post Likes: {{ mostLikedPost.likes }}</p>
-    <button (click)="likePost(mostLikedPost.id)">Like!</button>
+    <button appHighlighter (click)="likePost(mostLikedPost.id)">Like!</button>
 </div>
 <div *ngIf="!mostLikedPost">
     <h4>Unforutnately, there is no posts today.</h4>

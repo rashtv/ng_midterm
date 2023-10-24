@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FeedComponent } from './feed/feed.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { HighlighterDirective } from './highlighter.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     FeedComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    HighlighterDirective
   ],
   imports: [
     BrowserModule,
