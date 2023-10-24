@@ -10,6 +10,8 @@ import { Post } from '../post';
 export class FeedComponent {
   posts: Post[] = [];
 
+  newPost: Post = { id: 0, title: '', body: '', likes: 0, comments: [] };
+
   constructor(private postService: PostService) {}
 
   ngOnInit(): void {
@@ -18,5 +20,10 @@ export class FeedComponent {
 
   likePost(postId: number) {
     this.postService.incrementLikeNumber(postId);
+  }
+
+  submitPost() {
+    this.postService.addPost(this.newPost);
+    this.newPost = {id: 0, title: '', body: '', likes: 0, comments: [] };
   }
 }

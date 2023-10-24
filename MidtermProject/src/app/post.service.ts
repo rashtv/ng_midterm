@@ -62,6 +62,11 @@ export class PostService {
     }
   }
 
+  addPost(newPost: Post) {
+    newPost.id = this.posts.length + 1;
+    this.posts.push(newPost);
+  }
+
   getMostLikedPost(): Post | null {
     if (this.posts.length == 0) {
       return null      
